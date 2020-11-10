@@ -14,7 +14,7 @@ const order = async function (opt) {
     $.jCryption.crypt.setKey(res.PK)
 
     const frmData = {
-      'PayWay': 'COD', // 付款方式，COD為貨到付款。
+      'PayWay': 'PCA', // 付款方式，COD為貨到付款。
       'CusName': opt.cusName, // 購買人姓名。
       'CusMobile': opt.cusMobile, // 購買人連絡電話 - 手機。
       'AcceptEDM': 'N', // 是否願意收到PChome商品特惠通知。
@@ -44,9 +44,9 @@ const order = async function (opt) {
       'DeviceOSVersion': '',
       'DeviceAppVersion': '',
       'IsSkipOTP': 'N',
-      'availableDepositPoint': '0',
+      'availableDepositPoint': opt.availableDepositPoint,
       'availableVoucherPoint': '0',
-      'depositUsed': '0',
+      'depositUsed': opt.depositUsed,
       'voucherUsed': '0',
       'BindMobile': ''
     }
